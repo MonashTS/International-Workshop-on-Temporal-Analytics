@@ -14,7 +14,7 @@
   <link rel="manifest" href="/site.webmanifest">
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
 
   <!-- Custom styles for this template -->
   <link href="css/scrolling-nav.css" rel="stylesheet">
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
   
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"> -->
   
   <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 
@@ -74,8 +74,42 @@
     <div class="container text-center">
       <h1>International Workshop on Temporal Analytics</h1>
       <h2><a href="https://pakdd2024.org/" target="_blank">@PAKDD2024</a></h2>
+      <h2 id="countdown" align="center"></h2>
     </div>
   </header>
+
+  <script>
+  // Set the date we're counting down to
+  var countDownDate = new Date("May 7, 2024 08:00:00").getTime();
+
+  // Update the count down every 1 second
+  var x = setInterval(function() {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the result in the element with id="demo"
+    document.getElementById("countdown").innerHTML = days + " days : " + hours + " hours : "
+    + minutes + " minutes : " + seconds + " seconds ";
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+  </script>
+
+
   <div class="container">
   	<div class="row">
         <div class="col-lg">
@@ -116,7 +150,7 @@
 
             <p class="lead">Paper acceptance notification: <strong>February 28, 2024</strong></p>
 
-            <p class="lead">Paper camera-ready deadline: <strong>March 6, 2024</strong></p>
+            <p class="lead">Paper camera-ready deadline: <strong>March 8, 2024</strong></p>
 
             <p class="lead">Workshop day: <strong>May 7, 2024</strong></p>
 
@@ -142,18 +176,59 @@
             <h3><center>Submission website:</center></h3>
             <p class="lead" align="center"><a href="https://cmt3.research.microsoft.com/IWTA2024/" target="_blank">https://cmt3.research.microsoft.com/IWTA2024/</a></p>
 
+            <br> 
+            <br> 
+            <br> 
+
+            <h3><center>Camera Ready Instructions</center></h3>
+            <p class="lead"> We would like to thank you sincerely for your valuable contribution to our International Workshop on Temporal Analytics at PAKDD 2024. The accepted submissions will be published in Springer Workshop Proceedings (<a href="https://link.springer.com/book/10.1007/978-3-031-28996-5" target="_blank">example1</a>, <a href="https://link.springer.com/book/10.1007/978-3-030-56150-5" target="_blank">example2</a>).</p>
+
+            <p class="lead">Please read and follow carefully the following instructions for preparing the camera-ready version.</p>
+            <p class="lead">
+              Author’s guide provided by Springer.
+              <ul>
+                <li>Author’s Guide: <a href="https://www.springer.com/gp/computer-science/lncs/conference-proceedings-guidelines" target="_blank">https://www.springer.com/gp/computer-science/lncs/conference-proceedings-guidelines</a></li>
+                <li>Code of Conduct: <a href="https://www.springernature.com/gp/authors/book-authors-code-of-conduct" target="_blank">https://www.springernature.com/gp/authors/book-authors-code-of-conduct</a></li>
+              </ul>
+            </p>
+
+            <p class="lead"> Files:
+              <ul>
+                <li>Please prepare all of your source files (LaTeX files with all the associated style files, special fonts and eps files, or Word files) in a folder and name the folder as <i>source-paperID</i>. For papers prepared using LaTeX, authors should supply the bbl files to avoid the omission of data during conversion from bib to bbl. Please note that hyperlinks cannot be included in references.
+                </li>
+                <li>In addition, please prepare a final pdf of your paper and name it as <i>PAPER-paperID.pdf</i>.</li>
+                <li>The License-to-Publish form <a href="files/SNCS_ProceedingsPaper_LTP_ST_SN.docx" target="_blank">(available to download here)</a> must be signed by the corresponding author and scanned as <i>LTP-paperID.pdf</i>. Please be aware that digital signatures are currently not acceptable. If you have any copyright-related inquiries, please reach out to Springer well in advance of publication.</li>
+              </ul>
+            </p>
+
+            <p class="lead">For example, as shown in the following figure, if your paper ID is 1234, you should have a folder named <i>source-1234</i> containing all the source files and another <i>PAPER-1234.pdf</i> which is the final version of your paper. Additionally, a signed <i>LTP-1234.pdf</i> by the corresponding author should be attached as well. Finally, please zip the above folder and two pdf files as <i>paper-1234.zip</i> (paper-PaperID.zip) and upload using the <a href="https://cmt3.research.microsoft.com/IWTA2024/" target="_blank">submission system </a> by <strong>March 8 2024</strong>. In case of technical difficulties, please send the zip file to the workshop chair, <strong>chang.tan [AT] monash.edu</strong>.
+            </p>
+            <p align="center"><img src="figures/camera-ready-submission.png"></p>
+
+            <p class="lead">Finally, please register for the PAKDD conference or workshop, the early-bird deadline is <strong>March 10 2024</strong></p>
+         
+          <br> 
+          <br> 
+          <br> 
+          
+          <h3><center>Registrations and VISA</center></h3>
+          <p class="lead">Authors are required to register before March 13. Detailed information about registration is available at <a href="https://pakdd2024.org/registration/" target="_blank">https://pakdd2024.org/registration/</a>. 
+          </p>
+          <p class="lead">
+            For those needing Visa application to enter Taiwan, PAKDD 2024 has provided guidelines at <a href="https://pakdd2024.org/registration/" target="_blank">https://pakdd2024.org/visa-information/</a>. Provided any questions, please contact the Conference Secretariat at secretariat.reg@pakdd2024.org
+          </p>
           </div>
+        </div>
         </div>
       </div>
     </section>
-
 
   <section id="program" class="bg-light">
     <div class="container">
       <div class="row">
         <div class="mx-auto">
           <h2><center>Program</center></h2>
-          <p class="lead">This workshop will be held in conjunction with the <strong>28th Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD 2024)</strong> on the <strong>7th May 2024</strong>. It will be organized in person.</p>   
+          <p class="lead">This workshop will be held in conjunction with the <strong>28th Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD 2024)</strong> on the <strong>7th May 2024</strong>. It will be held in person.</p>   
           <!-- <p class="lead">This workshop will be held in conjunction with the <strong>27th Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD 2023)</strong> on the <strong>25th May 2023</strong>. It will be organized fully online.</p>    
             
           <p>&emsp;0900-0910:
@@ -272,6 +347,32 @@
               </td>
             </tr>
         </table>
+        </div>
+      </div>
+    </div>
+
+    <br> 
+
+    <div class="container">
+      <div class="row">
+        <div class="mx-auto">
+          <h2><center>Program Committee</center></h2>
+          <ul>
+                  <li>Christoph Bergmeir, Monash University, Australia</li>
+                  <li>Angus Dempster, Monash University, Australia</li>
+                  <li>Ben D Fulcher, University of Sydney, Australia</li>
+                  <li>David Guijo-Rubio, Universidad de Córdoba, Spain</li>
+                  <li>Dominique Gay, Université de La Réunion, Reunion</li>
+                  <li>Germain Forestier, University of Haute Alsace, France</li>
+                  <li>Jianzhong Qi, The University of Melbourne, Australia</li>
+                  <li>Mustafa Baydoğan, Boğaziçi University, Turkey</li>
+                  <li>Patrick Schäfer, Humboldt-Universität zu Berlin, Germany</li>
+                  <li>Romain Tavenard, Univ. Rennes, LETG / IRISA, France</li>
+                  <li>Thach Le Nguyen, University College Dublin, Ireland</li>
+                  <li>Thu Trang Nguyen, University College Dublin, Ireland</li>
+                  <li>Timilehin B Aderinola, University College Dublin, Ireland</li>
+                  <li>Zahraa Abdallah, University of Bristol, England</li>
+                </ul>
         </div>
       </div>
     </div>
